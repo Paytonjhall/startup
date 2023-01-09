@@ -1,3 +1,3 @@
 # startup
 # This is a readme made by Payton Hall in intellij
-# I am adding this line throught the github website
+# I am causing issues to make a merge conflict
