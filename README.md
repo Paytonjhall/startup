@@ -1,11 +1,8 @@
-# Bank Buddy
-Bank Buddy is a simple web program that allows users to easily budget, track, and manage their finances.
-There are a million and a half budgeting apps, but bank buddy allows you to easily track income and expenses for just one person, a small family, or even a large corporation.
-When a user makes a bank buddy account, they will be the only person in their bank. But they can easily add others to their bank.
+# Pantry.io
+Pantry.io is a web program that allows users to easily manage there pantry and recipes. 
+As a college student, I often struggle with knowing what to make before my food goes bad. I don't have time everyday to make it to the store to buy more so I need recipes of what I can make quickly. 
+When a user makes a meal, they can easily use Pantry.io to see what they can make with the food they have. 
 ## How to use
-Each user can be a part of 10 banks. 
-A user could have a bank with their spouse to track expenses. A bank for each child to monitor their spending, and possibly even more for work related purposes.
-Each bank has an ID and secret, the ID is needed to add money and lower members (like children) while the secret is needed to add members and remove money. The secret requires many steps to attain.
-## Why use bank buddy?
-Bank buddy has the ability to only allow money going out if each member of the bank allows it. This can stop children from making irrational purchases, require unanimity amongst bank members, and prevent fraud.
-Bank buddy will have a simple interface since its only job is to protect and monitor. 
+When I user signs up, they set what is in there pantry, also, after shopping, they can add what groceries they purchased whenever they'd like as well. Next, when they want to make a meal, they can see what foods they can make based on what items they have in their pantry!
+## Why use Pantry.io?
+Pantry.io will save time on knowing what to purchase at the store to make your favorite foods, keep track of foods so they don't spoil too fast, and help manage recipes virtually. 
