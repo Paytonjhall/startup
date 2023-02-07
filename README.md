@@ -14,6 +14,6 @@ Have you ever had food go bad in the fridge because you forgot about it? Or mayb
 
 <img width="865" alt="image" src="https://user-images.githubusercontent.com/6656872/214427491-4434e455-204f-4530-a027-41afe17203ed.png">
 
-Users can also benefit from checking out my simon game on m website: https//:simon.pantryplusplus.click
+Users can also benefit from checking out my simon game on m website: [https//:simon.pantryplusplus.click](https://simon.pantryplusplus.click/)
 While makeing that game I learned a lot about how html is layed out and how to make classes, etc. Everything works better when you carefully plan out how you want things to look. SVG is a little confusing but with some examples you can do some really really cool things. I want to look more into that!
 
