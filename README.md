@@ -14,6 +14,9 @@ Have you ever had food go bad in the fridge because you forgot about it? Or mayb
 
 <img width="865" alt="image" src="https://user-images.githubusercontent.com/6656872/214427491-4434e455-204f-4530-a027-41afe17203ed.png">
 
+HTML assignment:
 Users can also benefit from checking out my simon game on m website: [https//:simon.pantryplusplus.click](https://simon.pantryplusplus.click/)
 While makeing that game I learned a lot about how html is layed out and how to make classes, etc. Everything works better when you carefully plan out how you want things to look. SVG is a little confusing but with some examples you can do some really really cool things. I want to look more into that!
 
+CSS assignment:
+While doing the CSS and Bootstrap assignment, I learned just how cool bootstrap is! with just a few lines of code you can make things look really nice. Looking/Studying the example code really helped as well. I used mostly the same layouts, colors, and elements it used. I also realized just how important it is to have a good main.css and pick colors that work together. I used colors at first that I thought would like nice and it was terrible. I then used the colors that was in the code example and it looked so much more clean and professional. I am very excited to get started on mh startup site!
