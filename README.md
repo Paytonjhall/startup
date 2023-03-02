@@ -15,3 +15,10 @@ Pantry plus plus is a web app that can mange your pantry and recipes.
 - ./deployFiles.sh  -k ../../pantrykey.pem -h pantryplusplus.click -s startup
 - That is the script to run form the startup directory. It will deploy the files to the server.
 
+
+## Things I learned from the Javascript simon assignment:
+- Its incredible how much a few well written lines of code and do for a website.
+- Sound was a great addition and didn't require very much to implement. 
+- You need to make sure your css, html, and javascript are all linked up correctly, this was the trickest part for me.
+- Having a good example to go off on can make a huge difference.
+- After making everything worked, I got to enjoy my project, it even works on the phone which makes web programming so powerful!
