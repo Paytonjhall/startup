@@ -51,6 +51,21 @@
         </div>
     </nav>
 </header>
+<div class = "userProfile">
+    User: <span class="user-name"></span>
+</div>
+<div class = "recipes">
+    Recipes:
+</div>
+<div>Add a recipe
+    <form>
+        <label for="recipeName">Recipe Name</label>
+        <input type="text" id="recipeName" name="recipeName" placeholder="Recipe Name">
+        <label for="recipeInstructions">Instructions</label>
+        <input type="text" id="recipeInstructions" name="recipeInstructions" placeholder="Instructions">
+        <input type="submit" value="Submit" onclick="user.makeRecipe(recipeName, recipeInstructions)">
+    </form>
+</div>
 <main class="container-fluid bg-secondary text-center">
 </main>
 
@@ -66,5 +81,6 @@
         </div>
     </div>
 </footer>
+<script src="user.js"></script>
 </body>
 </html>
