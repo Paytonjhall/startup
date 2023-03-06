@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pantry ++</title>
     <link rel="icon" href="photos/pantryLogoNoBackground.png" />
-
+    <script src="login.js"></script>
     <link rel="stylesheet" href="main.css" />
 
     <!-- Add bootstrap url -->
@@ -26,10 +26,12 @@
         <img src = photos/pantryLogoNoBackground.png alt = "Pantry Logo">
         <h1>Welcome to Pantry ++</h1>
         <h3>Login to get started!</h3>
-        <form method="get" action="play.html">
-            <input type="text" id="name" placeholder="username" />
+        <form method="get" action="index.html">
+            <input type="text" id="username" placeholder="username" />
             <input type="text" id="password" placeholder="password" />
-            <a href="https://startup.pantryplusplus.click/" class="btn btn-primary">Login</a>
+            <!--<a href="https://startup.pantryplusplus.click/" class="btn btn-primary">Login</a>-->
+            <button class="btn btn-primary" onclick="login()">Login</button>
+
         </form>
     </div>
     <div></div>
