@@ -384,7 +384,7 @@ To include an image in your content you use the img element and specify the src 
   src="https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg"
 />
 mountain landscape
-
+( this is how you use a photo jpeg guy when adding an img source )
 Audio
 To include an audio file in your content you use the audio element and specify the src attribute with the URL to the source image. You can include the controls attribute if you want the user to be able to control the audio playback. If you do not display the controls then there is no visual representation of the audio in the rendered page. The autoplay attribute starts the audio playing as soon as the audio file is loaded, and the loop attribute keeps it playing over and over.
 
