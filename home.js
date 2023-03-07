@@ -1,12 +1,6 @@
 function likeRecipe(recipeId) {
 
-
 }
-
-
-
-
-
 
 function makeRecipeObject(name, instructions){
     return {

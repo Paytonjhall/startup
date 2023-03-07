@@ -54,8 +54,8 @@
 <div class = "userProfile">
     User: <span class="user-name"></span>
 </div>
-<div class = "recipes">
-    Recipes:
+<div class = "recipeCount">
+    Recipes: <span class="recipe-count"></span>
 </div>
 <div>Add a recipe
     <form>
@@ -63,10 +63,15 @@
         <input type="text" id="recipeName" name="recipeName" placeholder="Recipe Name">
         <label for="recipeInstructions">Instructions</label>
         <input type="text" id="recipeInstructions" name="recipeInstructions" placeholder="Instructions">
-        <input type="submit" value="Submit" onclick="user.makeRecipe(recipeName, recipeInstructions)">
+        <input type="submit" value="Submit" onclick="user.makeRecipe()">
     </form>
 </div>
 <main class="container-fluid bg-secondary text-center">
+    <div class="row">
+        <div class="recipeList stick-to-top">
+            <h2>Recipes</h2>
+        </div>
+    </div>
 </main>
 
 <footer class="bg-dark text-dark text-muted">
