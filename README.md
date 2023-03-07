@@ -1515,3 +1515,11 @@ console.log('done');
 
 // OUTPUT: {email: 'bud@mail.com', authenticated: true}
 // OUTPUT: done
+
+# Midterm study:
+You can use CSS to load fonts from Google, true
+column reverse in div reverses order 
+padding em puts space around the content of selected elements
+<div> creates a division element
+css order: margin border padding content
+Adds a mouse over event listener to a p element : document.querySelector('p').addEventListener('mouseover', console.log);
