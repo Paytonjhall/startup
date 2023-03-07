@@ -157,7 +157,7 @@ Modify the Caddy rules that route the traffic for the two web applications that 
 
 Review the Caddyfile to make sure it looks right. If your domain name was myfunkychickens.click it would look like the following.
 
-#HTML
+# HTML
 Attributes
 Every HTML element may have attributes. Attributes describe the specific details of the element. For example, the id attribute gives a unique ID to the element so that you can distinguish it from other elements. The class attribute is another common element attribute that designates the element as being classified into a named group of elements. Attributes are written inside the element tag with a name followed by an optional value. You can use either single quotes (') or double quotes (") to delimit attribute values.
 
@@ -237,7 +237,7 @@ Character	Entity
 >	&gt;
 "	&quot;
 '	&apos;
-😀	&#128512;
+&#128512;
 HTML Versions
 Understanding when different HTML features were introduced helps you know what has been around for a long time and probably supported by all browsers, and what is new and may not work everywhere. HTML is pretty stable, but it is still good to check a website like MDN or canIUse to make sure.
 
@@ -250,7 +250,7 @@ Year	Version	Features
 index.html
 By default a web server will display the HTML file named index.html when a web browser, such as Google Chrome, makes a request without asking for a specific HTML file. For example, when you ask for https://google.com in your web browser you will actually get back the HTML for the file https://google.com/index.html. For this reason, it is very common to name the main HTML file for your web application index.html.
 
-#Structure
+# Structure
 HTML structure elements
 The two major purposes of HTML is to provide structure and content to your web application. Some of the common HTML structural elements include body, header, footer, main, section aside, p, table, ol/ul, div, and span. We demonstrate the use of each element with the following HTML document. It starts with the top level content body. The body has three children, a header, main, and footer. Each of the body children then contains other structural content.
 
@@ -305,7 +305,7 @@ The footer has a content division with a single span.
   </footer>
 </body>
 
-#Input
+# Input
 From the very early days of HTML it contained elements for accepting the input of user data. These elements include the following:
 
 Element	Meaning	Example
@@ -372,7 +372,7 @@ required	Signifies that a value is required in order to be valid
 External media
 The media tags that reference external media all take a URL as an attribute. The path represented by the URL can either be a relative path or full path. A full path includes the protocol, domain name, and path to the file.
 
-https://images.pexels.com/photos/164170/pexels-photo-164170.jpeg
+
 A relative path references a file that is served from the same location as the HTML page rendering the element. You want to make the path is as relative as possible so that you can move your code around without having to actually adjust all of the external page references. For example, if your HTML page is located in a directory with a subdirectory named images that contains a file named photo.jpg you would use a relative path as follows.
 
 images/photo.jpg
@@ -444,7 +444,7 @@ The canvas element was introduced to HTML in order to facilitate 2D drawing and 
   ctx.stroke();
 </script>
  
- #CSS Flex
+# CSS Flex
  The flex display layout is useful when you want to partition your application into areas that responsively move around as the window resizes or the orientation changes. In order to demonstrate the power of flex we will build an application that has a header, footer, and a main content area that is split into two sections, with controls of the left and content on the right.
 
 So we can visualize our design by quickly sketching it out.
@@ -529,7 +529,7 @@ To handle making our header and footer disappear when the screen is to short to 
   }
 }
  
- #CSS Frameworks
+ # CSS Frameworks
  CSS frameworks provide functions and components that commonly appear in web applications. As web developers built more and more web applications they began to use the same patterns over and over. They combined these patterns into a shared package of code and contributed it to the world as open source repositories. This helped not only decrease the time to develop an application, but created a common user experience for the web in general.
 
 Today, there are lots of different open source CSS frameworks available to choose from. Many of them contain the same types of functionality, but they all bring something a little different to the table.
@@ -548,7 +548,7 @@ Tailwind takes a different approach than traditional CSS frameworks. Instead of 
   <p class="text-lg font-medium">“Tailwind CSS”</p>
 </div>
 Bootstrap
-🔑 Required reading: Getting started with Bootstrap
+Required reading: Getting started with Bootstrap
 
 The reigning champion for CSS frameworks is Bootstrap. Bootstrap has been supported by an active and vibrant community for over a decade and contains many lessons learned from real world applications. The major downside of Bootstrap is its own success. Because it is so popular, Bootstrap defines the de facto look and feel of websites. This is great for user experience continuity, but it makes it difficult for a website to grab the attention of new users.
 
@@ -722,7 +722,7 @@ for (const name in arr) {
 // OUTPUT: 0
 // OUTPUT: 1
 for of
-The for of statement iterates over an iterable's (Array, Map, Set, ...) property values.
+The for of statement iterates over an iterables (Array, Map, Set, ...) property values.
 
 const arr = ['a', 'b'];
 for (const val of arr) {
@@ -745,7 +745,7 @@ while (true) {
 }
 // OUTPUT: 0 1
  
- #Javascript functions
+ # Javascript functions
  In JavaScript functions are first class objects. That means that they can be assigned a name, passed as a parameter, returned as a result, and referenced from an object or array just like any other variable.
 
 The basic syntax of a function begins with the function keyword followed by zero or more parameters and a body that may contain zero or more return statements. The return statement my return a single value. Note that there are no type declarations, as the type is always inferred by the assignment of the value to the parameter.
@@ -868,7 +868,7 @@ labeler(5);
 labeler('fish');
 // OUTPUT: string=fish
  
- #Javascript Arrow Functions
+ # Javascript Arrow Functions
  Because functions are first order objects in JavaScript they can be declared anywhere and passed as parameters. This results in code with lots of anonymous functions cluttering things up. To make the code more compact the arrow syntax was created. This syntax replaces the need for the function keyword with the symbols => placed after the parameter declaration. The enclosing curly braces are also optional.
 
 This is a function in arrow syntax that takes no parameters and always returns 3.
@@ -965,7 +965,7 @@ a.push(4);
 console.log(a.length);
 // OUTPUT: 4
  
- #JavaScript Objects and Classes
+ # JavaScript Objects and Classes
  A JavaScript object represents a collection of name value pairs referred to as properties. The property name must be of type String or Symbol, but the value can be of any type. Objects also have common object-oriented functionality such as constructors, a this pointer, static properties and functions, and inheritance.
 
 Objects can be created with the new operator. This causes the object's constructor to be called. Once declared you can add properties to the object by simply referencing the property name in an assignment. Any type of variable can be assigned to a property. This includes a sub-object, array, or function. The properties of an object can be referenced either with dot (obj.prop) or bracket notation (obj['prop']).
@@ -1094,7 +1094,7 @@ const e = new Employee('Eich', 'programmer');
 console.log(e.print());
 // OUTPUT: My name is Eich. I am a programmer
              
-#Regular Expressions
+# Regular Expressions
 Regular expression support is built right into JavaScript. If you are not familiar with regular expressions, you can think of them as textual pattern matchers. You use a regular expression to find text in a string so that you can replace it, or simply to know that it exists.
 
 You can create a regular expression using the class constructor or a regular expression literal.
@@ -1115,7 +1115,7 @@ text.replace(petRegex, 'animal');
 petRegex.test(text);
 // RETURNS: true
  
-#Rest and spread:
+# Rest and spread:
 Sometimes you want a function to take an unknown number of parameters. For example, if you wanted to write a function that checks to see if some number in a list is equal to a given number. You could write this using an array.
 
 function hasNumber(test, numbers) {
@@ -1153,7 +1153,7 @@ const p = person(...['Ryan', 'Dahl']);
 console.log(p);
 // OUTPUT: {first: 'Ryan', last: 'Dahl'}
  
-#Deconstruction:
+# Deconstruction:
  Destructuring, not to be confused with destructing, is the process of pulling individual items out of an existing one, or removing structure. You can do this with either arrays or objects. This is helpful when you only care about a few items in the original structure.
 
 An example of destructuring arrays looks like the following.
@@ -1205,7 +1205,7 @@ let a = 22;
 console.log(a);
 // OUTPUT: 1
  
-#Javascript Exceptions:
+# Javascript Exceptions:
  JavaStript supports exception handling using the try catch and throw syntax. An exception can be triggered whenever your code generates an exception using the throw keyword, or whenever an exception is generated by the JavaScript runtime. For example, when an undefined variable is used.
 
 To catch a thrown exception, you wrap a code block with the try keyword, and follow the try block with a catch block. If within the try block, including any functions that block calls, an exception is thrown then all of the code after the throw is ignored, the call stack is unwound, and the catch block is called.
@@ -1254,7 +1254,7 @@ function getScores() {
   }
 }
  
-#DOM
+# DOM
  The Document Object Model (DOM) is an object representation of the HTML elements that the browser uses to render the display. The browser also exposes the DOM to external code so that you can write programs that dynamically manipulate the HTML.
 
 The browser provides access to the DOM through a global variable name document that points to the root element of the DOM. If you open the browser's debugger console window and type the variable name document you will see the DOM for the document the browser is currently rendering.
@@ -1340,7 +1340,7 @@ You can also add event listeners directly in the HTML. For example, here is a on
 
 <button onclick='alert("clicked")'>click me</button>
  
-#Promises and Observer Pattern:
+# Promises and Observer Pattern:
  JavaScript executes as a single threaded application. That means there is only ever one piece of code executing at the same time. However, the fact that it does not execute concurrently does not mean that it does not execute in parallel. You can asynchronously execute code with the use of a JavaScript Promise. Because the execution is asynchronous the promise object can be in one of three states at any given point in time.
 
 pending - Currently running asynchronously
@@ -1424,7 +1424,7 @@ coinToss
 The observer pattern
 Promises are the standard way to do asynchronous processing in JavaScript, but they are not the only way. The Observer pattern, popularized by web programming frameworks such as Angular, use a model called Observer. The major difference between Observers and Promises is that Promises immediately begin to execute when the Promise is created, but Observers form a pipeline that you then pass an execution object into. This allows Observers to be reused, and the result of executing an Observable to be saved as a history of a particular execution.
  
-#Async and Await:
+# Async and Await:
  JavaScript Promise objects are great for asynchronous execution, but as developers began build large systems with promises they started wanting a more concise representation. This was provided with the introduction of the async/await syntax. The await keyword wraps the execution of a promise and removed the need to chain functions. The await expression will block until the promise state moves to fulfilled, or throws an exception if the state moves to rejected. For example, if we have a function that returns a coin toss promise.
 
 const coinToss = () => {
