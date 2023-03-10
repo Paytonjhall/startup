@@ -55,7 +55,7 @@
     User: <span class="user-name"></span>
 </div>
 <div class = "recipeCount">
-    Recipes: <span class="recipe-count"></span>
+    Recipes count: <span class="recipe-count"></span>
 </div>
 <div>Add a recipe
     <form>
@@ -67,11 +67,17 @@
     </form>
 </div>
 <main class="container-fluid bg-secondary text-center">
-    <div class="row">
-        <div class="recipeList stick-to-top">
-            <h2>Recipes</h2>
-        </div>
-    </div>
+    <table class="table table-warning table-striped-columns">
+        <thead class="table-dark">
+        <tr>
+            <th>Recipe Name</th>
+            <th>Instructions</th>
+            <th>Author</th>
+            <th>Likes</th>
+        </tr>
+        </thead>
+        <tbody id="recipeList"></tbody>
+    </table>
 </main>
 
 <footer class="bg-dark text-dark text-muted">
