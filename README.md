@@ -22,3 +22,9 @@ Pantry plus plus is a web app that can mange your pantry and recipes.
 - You need to make sure your css, html, and javascript are all linked up correctly, this was the trickest part for me.
 - Having a good example to go off on can make a huge difference.
 - After making everything worked, I got to enjoy my project, it even works on the phone which makes web programming so powerful!
+
+## Things I learned from the Javascript startup assignment:
+- I learned how to use the localstorage to maintain items.
+- I learned how to link items from my html page to the javascript page using query and select element.
+- I learned how to manipulate data and push it back out to the data.
+- I learned how to use loops and make functions in javascript.
