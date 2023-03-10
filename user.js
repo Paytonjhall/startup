@@ -5,7 +5,7 @@ function getUserName() {
 class userProfile {
     usersRecipes = [];
     constructor() {
-
+        //localStorage.clear()
         this.usersRecipes = localStorage.getItem('recipes') ?? [];
         console.log("user profile loaded");
         const userName = document.querySelector('.user-name');
@@ -28,9 +28,9 @@ class userProfile {
                 recipes = [];
             }
             console.log("recipes: " + recipes);
+        } else {
+            recipes = [];
         }
-        console.log(typeof recipes);
-        console.log("recipes type")
         recipes.push(recipe);
         //this.usersRecipes.push(recipe);
         let recipesCounter = recipes.length;
@@ -87,6 +87,8 @@ class userProfile {
                 console.log(e);
             }
             console.log("recipes: " + recipes);
+        } else {
+            recipes = [];
         }
 
 
