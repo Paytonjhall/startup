@@ -12,7 +12,8 @@ class userProfile {
         userName.textContent = getUserName();
         // localStorage.clear(); // reset local storage
         const recipeCount = document.querySelector('.recipe-count');
-        recipeCount.textContent = this.usersRecipes.length + "";
+        const count = localStorage.getItem('count') ?? 0;
+        recipeCount.textContent = count + "";
     }
 
     addRecipe(recipe) {
@@ -32,6 +33,9 @@ class userProfile {
         console.log("recipes type")
         recipes.push(recipe);
         //this.usersRecipes.push(recipe);
+        let recipesCounter = recipes.length;
+        const recipeCount = document.querySelector('.recipe-count');
+        recipeCount.textContent = recipesCounter + "";
         localStorage.setItem('recipes', JSON.stringify(recipes));
         this.loadRecipes();
         // recipeCount = usersRecipes.length; //Not sure what this is for
@@ -46,9 +50,6 @@ class userProfile {
 
         this.addRecipe({
             likes: 0,
-            like: function () {
-                this.likes++;
-            },
             name: name,
             instructions: instructions,
             author: getUserName()
@@ -58,13 +59,18 @@ class userProfile {
 
     likeRecipe(recipe) {
         //This will run when the like button is pressed
-        recipe.like();
-        this.updateCount();
-    }
+        console.log("liked recipe: " + recipe.name);
+        recipe.likes ++
+        let allRecipes = localStorage.getItem('recipes');
+        allRecipes = JSON.parse(allRecipes);
+        for (let i = 0; i < allRecipes.length; i++) {
+            if (allRecipes[i].name === recipe.name) {
+                allRecipes[i].likes = recipe.likes;
+            }
+        }
+        localStorage.setItem('recipes', JSON.stringify(allRecipes));
+        location.reload()
 
-    updateCount() {
-        const recipeCount = document.querySelector('.recipe-count');
-        recipeCount.textContent = this.usersRecipes.length + "";
     }
 
 
@@ -83,32 +89,38 @@ class userProfile {
             console.log("recipes: " + recipes);
         }
 
-        const tableBodyEl = document.querySelector('#recipeList');
 
+        const tableBodyEl = document.querySelector('#recipeList');
+        let j = 0;
         if (recipes && recipes.length) {
             for (const [i, recipe] of recipes.entries()) {
-
+                j++;
                 const nameTdEl = document.createElement('td');
                 const instructionTdEl = document.createElement('td');
                 const authorTdEl = document.createElement('td');
                 const likesTdEl = document.createElement('td');
+                const likeButton = document.createElement('button');
 
                 nameTdEl.textContent = recipe.name;
                 instructionTdEl.textContent = recipe.instructions;
                 likesTdEl.textContent = recipe.likes;
                 authorTdEl.textContent = recipe.author;
+                likeButton.textContent = "Like";
+                likeButton.onclick = () => this.likeRecipe(recipe);
                 if(recipe.author === getUserName()) {
                     const rowEl = document.createElement('tr');
                     rowEl.appendChild(nameTdEl);
                     rowEl.appendChild(instructionTdEl);
                     rowEl.appendChild(authorTdEl);
                     rowEl.appendChild(likesTdEl);
+                    rowEl.appendChild(likeButton);
                     tableBodyEl.appendChild(rowEl);
                 }
             }
         } else {
             tableBodyEl.innerHTML = '<tr><td colSpan=4>Add a recipe!</td></tr>';
         }
+        localStorage.setItem('count', j);
     }
 }
 const user = new userProfile();
