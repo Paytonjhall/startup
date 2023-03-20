@@ -28,3 +28,8 @@ Pantry plus plus is a web app that can mange your pantry and recipes.
 - I learned how to link items from my html page to the javascript page using query and select element.
 - I learned how to manipulate data and push it back out to the data.
 - I learned how to use loops and make functions in javascript.
+
+## Things I learned from the Express/Node simon assignment:
+- I wasn't using the right script for a bit and was having some errors.
+- The API to get a cool quote and new photo is really cool and super useful. A new page everytime.
+- It's tricky to get everything right the first time, especially the end points. I will need to be careful/sure with my startup assignment.
