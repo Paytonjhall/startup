@@ -22,3 +22,10 @@ Pantry plus plus is a web app that can mange your pantry and recipes.
 - You need to make sure your css, html, and javascript are all linked up correctly, this was the trickest part for me.
 - Having a good example to go off on can make a huge difference.
 - After making everything worked, I got to enjoy my project, it even works on the phone which makes web programming so powerful!
+
+
+## Things I learned from the Database Mongo simon assignment:
+- Mongo is very powerful and very easy to integrate. 
+- Its important to keep your passwords/secrets as env variables so others can't see them in github.
+- Having the right structures in your code is important so you know where to send out api calls and thigns.
+- I really like mongo and want to use it in my own projects!
