@@ -39,3 +39,9 @@ Pantry plus plus is a web app that can mange your pantry and recipes.
 - I learned how to use loops and make functions in javascript.
 
 
+## Things I have learned from Log in for simon assignment:
+- Cookies make log in very easy and secure. 
+- It is important to make sure your package.json is up to date when deploying.
+- Security is an important process. Everything can easily be managed from that index.js file. 
+
+
