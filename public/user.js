@@ -16,7 +16,7 @@ class userProfile {
         recipeCount.textContent = count + "";
     }
 
-    addRecipe(recipe) {
+    async addRecipe(recipe) {
         console.log("adding recipe");
         let recipes
         const recipesText = localStorage.getItem('recipes');
@@ -37,11 +37,12 @@ class userProfile {
         const recipeCount = document.querySelector('.recipe-count');
         recipeCount.textContent = recipesCounter + "";
         localStorage.setItem('recipes', JSON.stringify(recipes));
+        const addresponse = await fetch('/api/addRecipes', recipe);
         this.loadRecipes();
         // recipeCount = usersRecipes.length; //Not sure what this is for
     }
 
-    makeRecipe() {
+    async makeRecipe() {
         console.log("making recipe");
         let name = document.querySelector("#recipeName").value;
         let instructions = document.querySelector("#recipeInstructions").value;
@@ -74,7 +75,11 @@ class userProfile {
     }
 
 
-    loadRecipes() {
+    async loadRecipes() {
+        const response = await fetch('/api/recipes', username);
+        recipes = await response.json;
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+        // TODO: Fix stuff below
         console.log("loading recipes");
         let recipes = []
         const recipesText = localStorage.getItem('recipes');
@@ -109,7 +114,7 @@ class userProfile {
                 authorTdEl.textContent = recipe.author;
                 likeButton.textContent = "Like";
                 likeButton.onclick = () => this.likeRecipe(recipe);
-                if(recipe.author === getUserName()) {
+                if (recipe.author === getUserName()) {
                     const rowEl = document.createElement('tr');
                     rowEl.appendChild(nameTdEl);
                     rowEl.appendChild(instructionTdEl);

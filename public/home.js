@@ -8,11 +8,12 @@ class homePage {
         userName.textContent = getUserName();
     }
 
-    loadRecipes() {
-
-        console.log("loading recipes");
+    async loadRecipes() {
+        const response = await fetch('/api/recipes', username);
+        const allrecipes = await response.json();
+        localStorage.setItem('recipes', JSON.stringify(allrecipes));
         let recipes
-        console.log(this.usersRecipes)
+        console.log("loading recipes");
         const recipesText = localStorage.getItem('recipes');
         if (recipesText) {
             recipes = JSON.parse(recipesText);
