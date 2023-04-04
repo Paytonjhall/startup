@@ -19,6 +19,7 @@ app.use(`/api`, apiRouter);
 
 //Create user
 apiRouter.post('/auth/create', async (req, res) => {
+    console.log("create")
     if (await DB.getUser(req.body.email)) {
         res.status(409).send({ msg: 'Existing user' });
     } else {
@@ -26,7 +27,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 
         // Set the cookie
         setAuthCookie(res, user.token);
-
+        console.log("make cookie")
         res.send({
             id: user._id,
         });
@@ -36,6 +37,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 // GetAuth token for the provided credentials
 apiRouter.post('/auth/login', async (req, res) => {
     const user = await DB.getUser(req.body.email);
+    console.log("log in")
     if (user) {
         if (await bcrypt.compare(req.body.password, user.password)) {
             setAuthCookie(res, user.token);
