@@ -44,9 +44,4 @@ Pantry plus plus is a web app that can mange your pantry and recipes.
 - It is important to make sure your package.json is up to date when deploying.
 - Security is an important process. Everything can easily be managed from that index.js file. 
 
-## Things I learned from websocket: 
-- Websockets are very powerful and allow for user to user communication
-- Websockets aren't terrible hard to implement yet add a lot of functionality.
-- The ws library is vital for implementing websockets.
-
 
