@@ -37,7 +37,11 @@ class userProfile {
         const recipeCount = document.querySelector('.recipe-count');
         recipeCount.textContent = recipesCounter + "";
         localStorage.setItem('recipes', JSON.stringify(recipes));
-        const addresponse = await fetch('/api/addRecipes', recipe);
+        const addresponse = await fetch('/api/addrecipe', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(recipe),
+        });
         await this.loadRecipes();
         // recipeCount = usersRecipes.length; //Not sure what this is for
     }

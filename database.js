@@ -53,7 +53,7 @@ function getAllRecipes() {
 
         limit: 75,
     };
-    const cursor = scoreCollection.find(query, options);
+    const cursor = recipesCollection.find(query, options);
     return cursor.toArray();
 }
 
@@ -63,7 +63,7 @@ function getUserRecipes(user){
         sort: { author: user },
         limit: 10,
     };
-    const cursor = scoreCollection.find(query, options);
+    const cursor = recipesCollection.find(query, options);
     return cursor.toArray();
 }
 

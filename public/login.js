@@ -13,12 +13,13 @@ let password = "admin";
     }
 
     if (authenticated) {
-        document.querySelector('#playerName').textContent = userName;
-        setDisplay('loginControls', 'none');
-        setDisplay('playControls', 'block');
+        document.querySelector('#userName').textContent = userName;
+        // setDisplay('loginControls', 'none');
+        // setDisplay('playControls', 'block');
     } else {
-        setDisplay('loginControls', 'block');
-        setDisplay('playControls', 'none');
+        logout()
+        // setDisplay('loginControls', 'block');
+        // setDisplay('playControls', 'none');
     }
 })();
 

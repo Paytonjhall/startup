@@ -2,15 +2,23 @@ function getUserName() {
     return localStorage.getItem('username') ?? 'Mystery User';
 }
 
-class homePage {
-    constructor() {
+
+   function homePage() {
         const userName = document.querySelector('.user-name');
         userName.textContent = getUserName();
     }
 
-    async loadRecipes() {
-        const response = await fetch('/api/recipes', getUserName());
-        const allrecipes = await response.json();
+
+async function loadRecipes() {
+    let allrecipes = []
+    const response = await fetch('http://localhost:3000/allrecipes',{
+        method: 'GET',
+        headers: { 'content-type': 'application/json' },
+    }).then(async data => data.json());
+
+        //allrecipes = await data.json()
+        console.log(data)
+        console.log('all recipes' + allrecipes);
         localStorage.setItem('recipes', JSON.stringify(allrecipes));
         let recipes
         console.log("loading recipes");
@@ -37,21 +45,22 @@ class homePage {
                 likeButton.onclick = () => this.likeRecipe(recipe);
 
                 const rowEl = document.createElement('tr');
-                    rowEl.appendChild(nameTdEl);
-                    rowEl.appendChild(instructionTdEl);
-                    rowEl.appendChild(authorTdEl);
-                    rowEl.appendChild(likesTdEl);
-                    rowEl.appendChild(likeButton);
+                rowEl.appendChild(nameTdEl);
+                rowEl.appendChild(instructionTdEl);
+                rowEl.appendChild(authorTdEl);
+                rowEl.appendChild(likesTdEl);
+                rowEl.appendChild(likeButton);
 
                 tableBodyEl.appendChild(rowEl);
             }
         } else {
             tableBodyEl.innerHTML = '<tr><td colSpan=4>Add a recipe!</td></tr>';
         }
+    //});
 
     }
 
-    likeRecipe(recipe) {
+    function likeRecipe(recipe) {
         //This will run when the like button is pressed
         console.log("liked recipe: " + recipe.name);
         recipe.likes ++
@@ -65,7 +74,5 @@ class homePage {
         localStorage.setItem('recipes', JSON.stringify(allRecipes));
         location.reload()
     }
-}
-
-const home = new homePage();
-home.loadRecipes();
+    homePage();
+    loadRecipes();

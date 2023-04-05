@@ -86,28 +86,28 @@ secureApiRouter.use(async (req, res, next) => {
 });
 
 // Get User Recipes
-apiRouter.post('/recipes', (_req, res) => {
-    console.log(req.body, username)
-    const recipes = DB.getUserRecipes(username)
+secureApiRouter.post('/recipes', async (_req, res) => {
+    const recipes = await DB.getUserRecipes(username)
     res.send(recipes);
 });
 
 //all recipes
-secureApiRouter.get('/allrecipes', (_req, res) => {
-    const recipes = DB.getAllRecipes()
+apiRouter.get('/allrecipes',  async (_req, res) => {
+    console.log('in all recipes')
+    const recipes = await DB.getAllRecipes()
     res.send(recipes);
 });
 
 //add recipes
-secureApiRouter.post('/addrecipe', (req, res) => {
-    const addRecipe = updateScores(req.body);
-    DB.addRecipe(addRecipe);
-    res.send(scores);
+secureApiRouter.post('/addrecipe', async (req, res) => {
+    //const addRecipe = updateScores(req.body);
+    await DB.addRecipe(req.body);
+    res.send({ msg: 'OK' });
 });
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
-    res.sendFile('index.html', { root: 'public' });
+    res.sendFile('login.html', { root: 'public' });
 });
 
 function setAuthCookie(res, authToken) {
