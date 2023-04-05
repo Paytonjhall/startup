@@ -3,12 +3,18 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
+const req = require("express");
+
+const authCookieName = 'token';
 
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
+
+//Use cookie parser
+app.use(cookieParser());
 
 // Serve up the front-end static content hosting
 app.use(express.static('public'));
@@ -80,20 +86,22 @@ secureApiRouter.use(async (req, res, next) => {
 });
 
 // Get User Recipes
-secureApiRouter.get('/recipes', (_req, res) => {
+apiRouter.post('/recipes', (_req, res) => {
     console.log(req.body, username)
     const recipes = DB.getUserRecipes(username)
     res.send(recipes);
 });
 
+//all recipes
 secureApiRouter.get('/allrecipes', (_req, res) => {
     const recipes = DB.getAllRecipes()
     res.send(recipes);
 });
 
-// SubmitScore
+//add recipes
 secureApiRouter.post('/addrecipe', (req, res) => {
-    const addRecipe = updateScores(req.body, );
+    const addRecipe = updateScores(req.body);
+    DB.addRecipe(addRecipe);
     res.send(scores);
 });
 
@@ -101,6 +109,14 @@ secureApiRouter.post('/addrecipe', (req, res) => {
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
 });
+
+function setAuthCookie(res, authToken) {
+    res.cookie(authCookieName, authToken, {
+        secure: true,
+        httpOnly: true,
+        sameSite: 'strict',
+    });
+}
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

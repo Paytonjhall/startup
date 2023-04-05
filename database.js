@@ -13,8 +13,8 @@ if (!userName) {
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
-const userCollection = client.db('pantry').collection('user');
-const recipesCollection = client.db('pantry').collection('recipes');
+const userCollection = client.db('Pantry').collection('user');
+const recipesCollection = client.db('Pantry').collection('recipes');
 
 function getUser(email) {
     return userCollection.findOne({ email: email });

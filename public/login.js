@@ -4,7 +4,7 @@ let password = "admin";
 
 (async () => {
     let authenticated = false;
-    const userName = localStorage.getItem('userName');
+    const userName = localStorage.getItem('username');
     if (userName) {
         const nameEl = document.querySelector('#userName');
         nameEl.value = userName;
@@ -43,8 +43,8 @@ async function loginOrCreate(endpoint) {
     const body = await response.json();
 
     if (response?.status === 200) {
-        localStorage.setItem('userName', userName);
-        window.location.href = 'play.html';
+        localStorage.setItem('username', userName);
+        window.location.href = 'user.html';
     } else {
         const modalEl = document.querySelector('#msgModal');
         modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;

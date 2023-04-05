@@ -38,7 +38,7 @@ class userProfile {
         recipeCount.textContent = recipesCounter + "";
         localStorage.setItem('recipes', JSON.stringify(recipes));
         const addresponse = await fetch('/api/addRecipes', recipe);
-        this.loadRecipes();
+        await this.loadRecipes();
         // recipeCount = usersRecipes.length; //Not sure what this is for
     }
 
@@ -49,7 +49,7 @@ class userProfile {
         //document.querySelector("#recipeName").value = "";
         //document.querySelector("#recipeInstructions").value = "";
 
-        this.addRecipe({
+        await this.addRecipe({
             likes: 0,
             name: name,
             instructions: instructions,
@@ -76,7 +76,7 @@ class userProfile {
 
 
     async loadRecipes() {
-        const response = await fetch('/api/recipes', username);
+        const response = await fetch('/api/recipes', getUserName());
         recipes = await response.json;
         localStorage.setItem('recipes', JSON.stringify(recipes));
         // TODO: Fix stuff below
@@ -132,4 +132,4 @@ class userProfile {
 }
 const user = new userProfile();
 
-user.loadRecipes();
+user.loadRecipes().then(async r => await user.loadRecipes());

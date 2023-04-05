@@ -9,7 +9,7 @@ class homePage {
     }
 
     async loadRecipes() {
-        const response = await fetch('/api/recipes', username);
+        const response = await fetch('/api/recipes', getUserName());
         const allrecipes = await response.json();
         localStorage.setItem('recipes', JSON.stringify(allrecipes));
         let recipes
